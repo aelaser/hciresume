@@ -1,3 +1,25 @@
+// new nav bar
+const indicator = document.querySelector("[data-indicator]")
+
+document.addEventListener("click", e => {
+  let anchor
+  if (e.target.matches("a")) {
+    anchor = e.target
+  } else {
+    anchor = e.target.closest("a")
+  }
+  if (anchor != null) {
+    const allAnchors = [...document.querySelectorAll("a")]
+    const index = allAnchors.indexOf(anchor)
+    indicator.style.setProperty("--position", index-6)
+    document.querySelectorAll("a").forEach(elem => {
+      elem.classList.remove("active")
+    })
+    anchor.classList.add("active")
+  }
+})
+//-----------
+
 // ------- Show nav-bar ------- 
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
@@ -12,6 +34,8 @@ const showMenu = (toggleId, navId) =>{
     }
 }
 showMenu('nav-toggle','nav-menu')
+
+
 
 // ------- Remove menu after click ------- 
 const navLink = document.querySelectorAll('.nav__link')
