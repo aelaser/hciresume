@@ -2,7 +2,7 @@
 
 /*-------- VARIABLES CSS --------*/
 :root {
-  --header-height: 3rem;
+  --header-height: 10rem;
 
   /*---------------- Colors ----------------*/
   --first-color: #6654C4;
@@ -43,7 +43,7 @@
   --indicator-spacing: calc(var(--icon-size) / 8);
   --border-radius: calc(var(--icon-size) / 4);
   --nav-item-padding: calc(var(--icon-size) / 2);
-  --background-color: #F5F6FA;
+  --background-color: var(--body-color);
 
 }
 

@@ -3,21 +3,22 @@ const indicator = document.querySelector("[data-indicator]")
 
 document.addEventListener("click", e => {
   let anchor
-  if (e.target.matches("a")) {
+  if (e.target.matches("a#external")) {
     anchor = e.target
   } else {
-    anchor = e.target.closest("a")
+    anchor = e.target.closest("a#external")
   }
   if (anchor != null) {
     const allAnchors = [...document.querySelectorAll("a")]
     const index = allAnchors.indexOf(anchor)
-    indicator.style.setProperty("--position", index-6)
+    indicator.style.setProperty("--position", index-2)
     document.querySelectorAll("a").forEach(elem => {
       elem.classList.remove("active")
     })
     anchor.classList.add("active")
   }
 })
+
 //-----------
 
 // ------- Show nav-bar ------- 
