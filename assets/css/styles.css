@@ -5,13 +5,13 @@
   --header-height: 3ren;
 
   /*---------------- Colors ----------------*/
-  --first-color: #6654C4;
-  --first-color-alt: #6654C4;
-  --first-color-send: #6654C4;
+  --first-color: #EDEFF1;
+  --first-color-alt: #EDEFF1;
+  --first-color-send: #EDEFF1;
   --title-color: #161212;
-  --text-color: #5B5757;
+  --text-color: #323235;
   --text-color-light: #8F8A8A;
-  --body-color: #F5F6FA;
+  --body-color: #f6f6f6;
   --container-color: #FFF;
 
   /*---------------- Font and typography ----------------*/
@@ -39,7 +39,7 @@
   --z-fixed: 100;
 
   /*------nav-bar--------*/
-  --icon-size: 1.5rem;
+  --icon-size: 2rem;
   --indicator-spacing: calc(var(--icon-size) / 8);
   --border-radius: calc(var(--icon-size) / 4);
   --nav-item-padding: calc(var(--icon-size) / 2);
@@ -171,7 +171,7 @@ body {
 }
 
 .l-header{
-  padding-top: 3rem;
+  padding-top: 3.5rem;
   width: 100%;
   position: fixed;
   top: 0;
@@ -196,6 +196,7 @@ body {
   margin: 0 auto;
   /* margin-top: 10rem; */
   padding: 0 calc(var(--nav-item-padding) * 1.5);
+  box-shadow: 0 15px 48px rgba(0, 0, 0, .09);
 }
 
 .list {
@@ -206,7 +207,7 @@ body {
 }
 
 .list a {
-  color: #333;
+  color: #525252;
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -215,12 +216,14 @@ body {
 }
 
 .list .text {
-  font-size: .8em;
+  font-size: 0.9em;
+  font-weight: 500;
+  margin-top: 10px;
   opacity: 0;
   pointer-events: none;
   transition: 250ms ease-in-out;
   position: absolute;
-  bottom: calc(.5 * var(--nav-item-padding));
+  bottom: calc(0.3 * var(--nav-item-padding));
   transform: translateY(50%);
 }
 
@@ -264,29 +267,22 @@ body {
 }
 
 .indicator::after {
-  background-color:#c26969;
-  width: calc(var(--icon-size) * 2);
-  height: calc(var(--icon-size) * 2);
-  top: calc(-1 * var(--icon-size));
+  background-color: white;
+  width: calc(var(--icon-size) * 1.8);
+  height: calc(var(--icon-size) * 1.8);
+  left: 0.25rem;
+  top: -1.8rem;
+  /* top: calc(-1 * var(--icon-size)); */
 }
 .indicator::before {
   background-color: var(--body-color);
+  /* box-shadow: 0 -20px 30px rgba(0, 0, 0, .08); */
   width: calc((var(--icon-size) + var(--indicator-spacing)) * 2);
   height: calc((var(--icon-size) + var(--indicator-spacing)) * 2);
-  top: calc(-1 * var(--icon-size) - var(--indicator-spacing));
+  top: calc(-1* var(--icon-size) - var(--indicator-spacing));
   left: calc(-1 * var(--indicator-spacing));
 }
 
-.fa-briefcase {
-  font-size: 1.5rem; /* Adjust this value to your preference */
-}
-.fa-user {
-  font-size: 1.5rem; /* Adjust this value to your preference */
-}
-
-.fa-file {
-  font-size: 1.5rem; /* Adjust this value to your preference */
-}
 
 
 /* .corners::before {
@@ -349,8 +345,20 @@ body {
 .nav__item{
   margin-bottom: var(--mb-3);
 }
+
 .nav__logo {
-  font-size: 1.3rem;
+  /* Set a max width if needed to ensure it doesn't take full width of the screen */
+  max-width: 60px;  /* adjust this value based on your design needs */
+}
+
+.nav__logo img {
+  max-width: 100%;  /* ensures the image won't exceed its container size */
+  height: auto;     /* maintains the image's aspect ratio */
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 8px 48px rgba(0, 0, 0, .12); /* Optional: Add a soft shadow for depth */
+  transition: background 0.3s;
 }
 
 .nav__link, .nav__logo, .nav__toggle{
@@ -358,10 +366,17 @@ body {
   font-weight: var(--font-semi-bold);
   text-decoration: none;
   
+  
 }
 
 #theme-button {
   font-size: 1.5rem;
+  background-color: white;     /* Set background to white */
+  border-radius: 50%;          /* Makes the background rounded */
+  padding: 18px;               /* Creates space around the icon */
+  box-shadow: 0 8px 48px rgba(0, 0, 0, .12); /* Optional: Add a soft shadow for depth */
+  display: inline-block;       /* Ensures the box-shadow is displayed correctly */
+  transition: background 0.3s;
 }
 
 .nav__logo:hover{
@@ -595,7 +610,7 @@ body {
 }
 
 .send__title, .send__description{
-  color: #fff;
+  color: var(--text-color);
 }
 
 .send__description{
